@@ -3,7 +3,7 @@ import { CiBookmark } from "react-icons/ci";
 
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
 
-    const { title, cover, author, author_img, reading_time, posted_date, hashtags } = blog;
+    const { id, title, cover, author, author_img, reading_time, posted_date, hashtags } = blog;
 
     return (
         <div className='mb-20 space-y-4'>
@@ -27,7 +27,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
                     hashtags.map((tag, idx) => <span key={idx}><a href="">#{tag} </a></span>)
                 }
             </p>
-            <button className='text-sm font-bold text-blue-600 underline' onClick={() => handleMarkAsRead(reading_time)}>Mark as read</button>
+            <button className='text-sm font-bold text-blue-600 underline' onClick={() => handleMarkAsRead(id, reading_time)}>Mark as read</button>
         </div>
     );
 };
